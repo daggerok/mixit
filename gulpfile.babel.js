@@ -130,6 +130,9 @@ function writeServiceWorkerFile(handleFetch, callback) {
     runtimeCaching: [{
       urlPattern: '/(.*)',
       handler: 'networkFirst',
+      options : {
+        networkTimeoutSeconds: 3
+      }
     }],
     staticFileGlobs: [ paths.dist.sw + '/**/*.{js,html,css,png,jpg,json,gif,svg,webp,eot,ttf,woff,woff2}'],
     stripPrefix: paths.dist.sw,
