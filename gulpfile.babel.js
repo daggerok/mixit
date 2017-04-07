@@ -131,7 +131,8 @@ function writeServiceWorkerFile(handleFetch, callback) {
       urlPattern: '/(.*)',
       handler: 'networkFirst',
       options : {
-        networkTimeoutSeconds: 3
+        networkTimeoutSeconds: 3,
+        maxAgeSeconds: 600
       }
     }],
     staticFileGlobs: [ paths.dist.sw + '/**/*.{js,html,css,png,jpg,json,gif,svg,webp,eot,ttf,woff,woff2}'],
